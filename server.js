@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs'); // handlebars - e un fel de jade
 const fs = require('fs');
+const port = process.env.PORT || 3000; // heroku o sa isi puna singur; daca nu exista punem 3000
 
 var app = express();
 
@@ -73,6 +74,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000');
 });
